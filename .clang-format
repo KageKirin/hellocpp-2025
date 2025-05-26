@@ -1,0 +1,32 @@
+﻿---
+BasedOnStyle: Google
+
+BreakBeforeBraces: Allman
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 2
+---
+Language: Cpp
+
+AlignAfterOpenBracket: Align
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: Consecutive #AcrossEmptyLinesAndComments
+AlignConsecutiveBitFields: Consecutive #AcrossEmptyLinesAndComments
+AlignConsecutiveDeclarations: Consecutive #AcrossEmptyLinesAndComments
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+BinPackArguments: false
+BinPackParameters: false
+FixNamespaceComments: true
+DerivePointerAlignment: false
+PointerAlignment: Left
+SpaceBeforeParens: ControlStatements
+ColumnLimit: 160
