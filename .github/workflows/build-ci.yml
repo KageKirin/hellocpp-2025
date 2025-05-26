@@ -19,6 +19,18 @@ jobs:
     secrets: inherit
 
 
+  unittests:
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/make-unittests.yml@main
+    with:
+      max-parallel: 4
+      configurations: ${{ vars.TEST_CONFIGURATIONS }}
+      commands: ${{ vars.TEST_COMMANDS }}
+      include: ${{ vars.TEST_MATRIX }}
+    secrets: inherit
+
+
   tag-release:
     if: github.event.pull_request.merged == true
     permissions:
