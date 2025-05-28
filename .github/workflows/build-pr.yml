@@ -1,0 +1,17 @@
+name: build-pr
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: kagekirin/gha-py-toolbox/.github/workflows/make-build.yml@main
+    with:
+      configurations: ${{ vars.BUILD_CONFIGURATIONS }}
+      include: ${{ vars.BUILD_MATRIX }}
+    secrets: inherit
