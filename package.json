@@ -1,0 +1,55 @@
+{
+  "name": "hellocpp-2025",
+  "displayName": "Hello C++ 2025 (source)",
+  "version": "0.0.0",
+  "description": "Workspace for C/C++ dev, updated to 2025.",
+  "license": "MIT",
+  "homepage": "https://github.com/KageKirin/hellocpp-2025#readme",
+  "keywords": [
+    "c++"
+  ],
+  "author": {
+    "name": "KageKirin",
+    "email": "kagekirin@gmail.com",
+    "url": "https://github.com/kagekirin"
+  },
+  "bugs": {
+    "url": "https://github.com/KageKirin/hellocpp-2025/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KageKirin/hellocpp-2025.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@kagekirin"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "files": [
+    ".clang-format",
+    ".clang-tidy",
+    "*.md",
+    "*.lua",
+    "*.make",
+    "*.h",
+    "*.hpp",
+    "*.hxx",
+    "*.c",
+    "*.cpp",
+    "*.cxx",
+    "*.inl",
+    "*.fbs",
+    "makefile",
+    "make/*.make",
+    "scripts/*.lua",
+    "libs/*",
+    "src/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "make genie; make changelog projgen build CONFIG=release"
+  }
+}

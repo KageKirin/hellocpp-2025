@@ -28,3 +28,17 @@ jobs:
     with:
       dry-run: true
     secrets: inherit
+
+
+  package:
+    permissions:
+      contents: read
+      packages: write
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/npm-pack.yml@main
+    with:
+      targets: ${{ vars.DEPLOY_TARGETS }}
+      include: ${{ vars.DEPLOY_MATRIX }}
+      package-json: package.json
+    secrets: inherit
