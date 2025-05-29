@@ -1,0 +1,22 @@
+name: publish-npm
+
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  publish-npm:
+    permissions:
+      contents: read
+      packages: write
+    uses: kagekirin/gha-py-toolbox/.github/workflows/npm-publish.yml@main
+    with:
+      targets: ${{ vars.DEPLOY_TARGETS }}
+      include: ${{ vars.DEPLOY_MATRIX }}
+      package-json: package.json
+      dry-run: ${{ vars.DEPLOY_DRYRUN }}
+    secrets: inherit
