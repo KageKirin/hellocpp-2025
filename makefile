@@ -7,6 +7,7 @@ include make/format.make
 endif
 
 include make/genie.make
+include make/changelog.make
 include make/fullbuild.make
 include make/unittest.make
 include make/cicd.make
