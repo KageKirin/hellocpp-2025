@@ -17,6 +17,17 @@ jobs:
     secrets: inherit
 
 
+  unittests:
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/make-unittests.yml@main
+    with:
+      max-parallel: 4
+      configurations: ${{ vars.TEST_CONFIGURATIONS }}
+      include: ${{ vars.TEST_MATRIX }}
+    secrets: inherit
+
+
   package:
     permissions:
       contents: read

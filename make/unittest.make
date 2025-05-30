@@ -20,5 +20,6 @@ functionalitytests:       \
 	hello
 
 unittests:                \
+	functionalitytests    \
 	unittest
 
